@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Moringa</string>
+    <string name="Heading1">Moringa Plantation</string>
+    <string name="Heading2"> Section 1: Address  Information</string>
+    <string name="text1">GIS coordinates</string>
+    <string name="text2">Longitude</string>
+    <string name="text12">  Latitude</string>
+    <string name="text3"> Plant  Number / ID</string>
+    <string name="text4"> Date of visit  </string>
+    <string name="text5"> CHW name and code   </string>
+    <string name="text6"> Team leader name and code   </string>
+    <string name="text7"> Village / Mohalla    </string>
+    <string name="text8"> Union council    </string>
+    <string name="text9"> Size of Plant (Inches)</string>
+    <string name="text10"> Location Of Plant   </string>
+    <string name="rd1"> 1. Small Land Owners</string>
+    <string name="rd2"> 2. Big Land Owners</string>
+    <string name="rd3"> 3. HouseHolds</string>
+    <string name="rd4"> 4. School</string>
+    <string name="rd5"> 5. Masjid</string>
+    <string name="rd6"> 6. Dargah</string>
+    <string name="rd7"> 7. Temple</string>
+    <string name="rd8"> 8. Graveyard</string>
+    <string name="rd9"> 9. Hospital</string>
+    <string name="rd10"> 10.Public place</string>
+    <string name="rd11"> 11.Any other(Specify)</string>
+    <string name="text11"> Quantity Of Plants</string>
+
+</resources>

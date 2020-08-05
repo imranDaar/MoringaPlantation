@@ -1,0 +1,546 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    xmlns:tools="http://schemas.android.com/tools"
+
+
+    android:focusable="true" android:focusableInTouchMode="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="@drawable/app_bg_gray"
+    tools:context=".MainActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="380dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/btn2"
+                    android:gravity="center"
+                    android:text="@string/Heading1"
+                    android:textSize="30sp" />
+
+                <ImageView
+                    android:id="@+id/icon1"
+                    android:layout_width="119dp"
+                    android:layout_height="58dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginRight="6dip"
+                    android:src="@drawable/house_1" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="381dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/btn2"
+                    android:gravity="center"
+                    android:text="@string/Heading2"
+                    android:textSize="26sp" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpQc2"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/colorAccent">
+
+                            <TextView
+                                android:id="@+id/qtxt_iQ21"
+                                android:layout_width="match_parent"
+                                android:layout_height="60dp"
+                                android:layout_toEndOf="@id/qtxt_iQ21"
+                                android:text="@string/text3"
+                                android:textSize="25dp" />
+
+                            <TextView
+                                android:id="@+id/qtxt_i2bi2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignTop="@id/qtxt_iQ21"
+                                android:layout_alignBottom="@id/qtxt_iQ21"
+                                android:text="@string/text3"
+                                android:textSize="25dp" />
+                        </RelativeLayout>
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/Pnid"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="##-###-#####"
+                            android:inputType="number"
+                            app:defaultValue="99"
+                            android:maxLength="10"
+                           app:mask="##-###-#####"
+                            app:pattern="^(\\d{2,2}\\-\\d{3,3}\\-\\d{5,5})$"
+                            app:type="equal" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldDtV"
+                    style="@style/cardView">
+
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/colorAccent">
+
+                            <TextView
+
+                                android:id="@+id/qtxt_iQ1"
+                                android:layout_width="match_parent"
+                                android:layout_height="60dp"
+                                android:layout_toEndOf="@id/qtxt_iQ1"
+                                android:text="@string/text4"
+                                android:textSize="25sp" />
+
+                            <TextView
+
+                                android:id="@+id/qtxt_i2b"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignTop="@id/qtxt_iQ1"
+                                android:layout_alignBottom="@id/qtxt_iQ1"
+                                android:text="@string/text4"
+                                android:textSize="25sp" />
+                        </RelativeLayout>
+                        <io.blackbox_vision.datetimepickeredittext.view.DatePickerEditText
+                            android:id="@+id/DoV"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="DD/MM/YYYY"
+                            app:dateFormat="dd-MM-yyyy"
+                            app:maxDate="CR_DATE"
+                            app:minDate="07/07/2020" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpQc1"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/colorAccent">
+
+                            <TextView
+                                android:id="@+id/qtxt_iQ2"
+                                android:layout_width="match_parent"
+                                android:layout_height="60dp"
+                                android:layout_toEndOf="@id/qtxt_iQ2"
+                                android:text="@string/text5"
+                                android:textSize="25dp" />
+
+                            <TextView
+                                android:id="@+id/qtxt_i2bi"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignTop="@id/qtxt_iQ2"
+                                android:layout_alignBottom="@id/qtxt_iQ2"
+                                android:text="@string/text5"
+                                android:textSize="25dp" />
+                        </RelativeLayout>
+                        <EditText
+                            android:id="@+id/Chwcode"
+                            android:layout_width="match_parent"
+                            android:layout_height="56dp"
+                            android:layout_marginBottom="12dp"
+                            android:hint="@string/text5"
+                            android:inputType="number"
+                            android:maxLength="3"
+                            android:textSize="20dp"/>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpQ3"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/colorAccent">
+
+                            <TextView
+                                android:id="@+id/qtxt_iQ3"
+                                android:layout_width="match_parent"
+                                android:layout_height="60dp"
+                                android:layout_toEndOf="@id/qtxt_iQ3"
+                                android:text="@string/text6"
+                                android:textSize="25dp" />
+
+                            <TextView
+                                android:id="@+id/qtxt_Q3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignTop="@id/qtxt_Q3"
+                                android:layout_alignBottom="@id/qtxt_Q3"
+                                android:text="@string/text6"
+                                android:textSize="25dp" />
+                        </RelativeLayout>
+
+                       <EditText
+                           android:id="@+id/Tlncode"
+                           android:layout_width="match_parent"
+                           android:layout_height="56dp"
+                           android:layout_marginBottom="12dp"
+                           android:hint="@string/text6"
+                           android:inputType="number"
+                           android:maxLength="3"
+                           android:textSize="20dp"/>
+
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpQ4"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/colorAccent">
+
+                            <TextView
+                                android:id="@+id/qtxt_iQ4"
+                                android:layout_width="match_parent"
+                                android:layout_height="60dp"
+                                android:layout_toEndOf="@id/qtxt_iQ4"
+                                android:text="@string/text7"
+                                android:textSize="25dp" />
+
+                            <TextView
+                                android:id="@+id/qtxt_Q4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignTop="@id/qtxt_Q4"
+                                android:layout_alignBottom="@id/qtxt_Q4"
+                                android:text="@string/text7"
+                                android:textSize="25dp" />
+                        </RelativeLayout>
+
+                        <EditText
+                            android:id="@+id/VM2"
+                            android:layout_width="match_parent"
+                            android:layout_height="56dp"
+                            android:layout_marginBottom="12dp"
+                            android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789-,"
+                            android:ems="10"
+                            android:gravity="start|top"
+                            android:hint="@string/text7"
+                            android:inputType="textMultiLine" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpQ5"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/colorAccent">
+
+                            <TextView
+                                android:id="@+id/qtxt_iQ5"
+                                android:layout_width="match_parent"
+                                android:layout_height="60dp"
+                                android:layout_toEndOf="@id/qtxt_iQ5"
+                                android:text="@string/text8"
+                                android:textSize="25dp" />
+
+                            <TextView
+                                android:id="@+id/qtxt_Q5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignTop="@id/qtxt_Q5"
+                                android:text="@string/text8"
+                                android:textSize="25dp" />
+                        </RelativeLayout>
+
+                        <EditText
+                            android:id="@+id/Uccode"
+                            android:layout_width="match_parent"
+                            android:layout_height="56dp"
+                            android:layout_marginBottom="12dp"
+                            android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789-,"
+                            android:ems="10"
+                            android:gravity="start|top"
+                            android:hint="@string/text8"
+                            android:inputType="textMultiLine" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpQ6"
+                    style="@style/cardView">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/colorAccent">
+
+                            <TextView
+                                android:id="@+id/qtxt_iQ6"
+                                android:layout_width="match_parent"
+                                android:layout_height="60dp"
+                                android:layout_toEndOf="@id/qtxt_iQ6"
+                                android:text="@string/text9"
+                                android:textSize="25dp" />
+
+                            <TextView
+                                android:id="@+id/qtxt_Q6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignTop="@id/qtxt_Q6"
+                                android:layout_alignBottom="@id/qtxt_Q6"
+                                android:text="@string/text9"
+                                android:textSize="25dp" />
+                        </RelativeLayout>
+                        <EditText
+                            android:id="@+id/Splant"
+                            android:layout_width="match_parent"
+                            android:layout_height="56dp"
+                            android:layout_marginBottom="12dp"
+                            android:hint="@string/text6"
+                            android:inputType="number"
+                            android:maxLength="3"
+                            android:textSize="20dp"/>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpQ7"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/colorAccent">
+
+                            <TextView
+                                android:id="@+id/qtxt_iQ7"
+                                android:layout_width="match_parent"
+                                android:layout_height="60dp"
+                                android:layout_toEndOf="@id/qtxt_iQ7"
+                                android:text="@string/text10"
+                                android:textSize="25dp" />
+
+                            <TextView
+                                android:id="@+id/qtxt_Q7"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignTop="@id/qtxt_Q7"
+                                android:layout_alignBottom="@id/qtxt_Q7"
+                                android:text="@string/text10"
+                                android:textSize="25dp" />
+                        </RelativeLayout>
+                        <RadioGroup
+                            android:id="@+id/rdq7"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <RadioButton
+                                android:id="@+id/q7rd1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/rd1"/>
+                            <RadioButton
+                                android:id="@+id/q7rd2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/rd2"/>
+                            <RadioButton
+                                android:id="@+id/q7rd3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/rd3"/>
+                            <RadioButton
+                                android:id="@+id/q7rd4"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/rd4"/>
+                            <RadioButton
+                                android:id="@+id/q7rd5"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/rd5"/>
+                            <RadioButton
+                                android:id="@+id/q7rd6"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/rd6"/>
+                            <RadioButton
+                                android:id="@+id/q7rd7"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/rd7"/>
+                            <RadioButton
+                                android:id="@+id/q7rd8"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/rd8"/>
+                            <RadioButton
+                                android:id="@+id/q7rd9"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/rd9"/>
+                            <RadioButton
+                                android:id="@+id/q7rd10"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/rd10"/>
+                            <RadioButton
+                                android:id="@+id/q7rd11"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/rd11"/>
+                        </RadioGroup>
+                        <EditText
+                            android:id="@+id/q711x"
+                            android:layout_width="match_parent"
+                            android:layout_height="56dp"
+                            android:layout_marginBottom="12dp"
+                            android:hint="Other"
+                            android:tag="q7rd11"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpQ8"
+                    style="@style/cardView">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/colorAccent">
+                            <TextView
+                                android:id="@+id/qtxt_iQ8"
+                                android:layout_width="match_parent"
+                                android:layout_height="60dp"
+                                android:layout_toEndOf="@id/qtxt_iQ8"
+                                android:text="@string/text11"
+                                android:textSize="25dp" />
+                            <TextView
+                                android:id="@+id/qtxt_Q8"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignTop="@id/qtxt_Q8"
+                                android:layout_alignBottom="@id/qtxt_Q8"
+                                android:text="@string/text11"
+                                android:textSize="25dp" />
+                        </RelativeLayout>
+                        <EditText
+                            android:id="@+id/QtyP"
+                            android:layout_width="match_parent"
+                            android:layout_height="56dp"
+                            android:layout_marginBottom="12dp"
+                            android:hint="@string/text11"
+                            android:inputType="number"
+                            android:maxLength="4"
+                            android:textSize="20dp"/>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <Button
+                    android:id="@+id/BtnS"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10sp"
+                    android:background="@drawable/btn2"
+                    android:text="Save" />
+                <Button
+                    android:id="@+id/BtnView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10sp"
+                    android:background="@drawable/btn2"
+                    android:text="Show Data" />
+
+
+
+
+
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
+
+
+
