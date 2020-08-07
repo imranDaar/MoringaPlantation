@@ -1,25 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    xmlns:tools="http://schemas.android.com/tools"
+    <data>
 
+        <variable
+            name="callback"
+            type="com.example.moringaplantation3.MainActivity" />
+    </data>
 
-    android:focusable="true" android:focusableInTouchMode="true"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="horizontal"
-    android:background="@drawable/app_bg_gray"
-    tools:context=".MainActivity">
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/app_bg_gray"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:padding="10dp">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -508,29 +510,37 @@
                             android:hint="@string/text11"
                             android:inputType="number"
                             android:maxLength="4"
-                            android:textSize="20dp"/>
+                            android:textSize="20dp" />
 
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
-                <Button
-                    android:id="@+id/BtnS"
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10sp"
-                    android:background="@drawable/btn2"
-                    android:text="Save" />
-                <Button
-                    android:id="@+id/BtnView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10sp"
-                    android:background="@drawable/btn2"
-                    android:text="Show Data" />
+                    android:layout_gravity="end"
+                    android:layout_marginTop="30sp"
+                    android:orientation="horizontal">
 
+                    <Button
+                        android:id="@+id/BtnS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5sp"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn2"
+                        android:text="Save" />
 
+                    <Button
+                        android:id="@+id/BtnView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5sp"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn2"
+                        android:text="Show Data" />
 
-
-
+                </LinearLayout>
 
 
             </LinearLayout>
@@ -540,7 +550,7 @@
 
     </ScrollView>
 
-</LinearLayout>
+</layout>
 
 
 

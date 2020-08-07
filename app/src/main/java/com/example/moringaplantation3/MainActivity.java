@@ -1,71 +1,46 @@
 package com.example.moringaplantation3;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+
+import com.example.moringaplantation3.databinding.ActivityMainBinding;
+
 public class MainActivity extends AppCompatActivity {
-    EditText q711x, Pnid;
-    RadioButton q7rd1, q7rd2, q7rd3, q7rd4, q7rd5, q7rd6, q7rd7, q7rd8, q7rd9, q7rd10, q7rd11;
+    ActivityMainBinding bi;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        bi.setCallback(this);
 
 
-        final EditText Pnid = findViewById(R.id.Pnid);
-        final EditText Dov = findViewById(R.id.DoV);
-        final EditText Chwcode = findViewById(R.id.Chwcode);
-        final EditText Tlncode = findViewById(R.id.Tlncode);
-        final EditText VM2 = findViewById(R.id.VM2);
-        final EditText Uccode = findViewById(R.id.Uccode);
-        final EditText Splant = findViewById(R.id.Splant);
-        final EditText QtyP = findViewById(R.id.QtyP);
-        final   EditText  q711x = findViewById(R.id.q711x);
-        q7rd1 = findViewById(R.id.q7rd1);
-        q7rd2 = findViewById(R.id.q7rd2);
-        q7rd3 = findViewById(R.id.q7rd3);
-        q7rd4 = findViewById(R.id.q7rd4);
-        q7rd5 = findViewById(R.id.q7rd5);
-        q7rd6 = findViewById(R.id.q7rd6);
-        q7rd7 = findViewById(R.id.q7rd7);
-        q7rd8 = findViewById(R.id.q7rd8);
-        q7rd9 = findViewById(R.id.q7rd9);
-        q7rd10 = findViewById(R.id.q7rd10);
-        q7rd11 = findViewById(R.id.q7rd11);
-
-        Button BtnS = findViewById(R.id.BtnS);
-        Button BtnView = findViewById(R.id.BtnView);
-
-
-        BtnS.setOnClickListener(new View.OnClickListener() {
+        bi.BtnS.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-            try {
-                     DatabaseSQLite dbf = new DatabaseSQLite(MainActivity.this);
-                       String ins = null;
-                       if(isValidate(Pnid,Dov,Chwcode,Tlncode,VM2,Uccode,Splant,QtyP)) {
-                           ins = dbf.addData(Pnid.getText().toString(), Dov.getText().toString(), Integer.parseInt(Chwcode.getText().toString()), Integer.parseInt(Tlncode.getText().toString()), VM2.getText().toString(), Uccode.getText().toString(), Integer.parseInt(Splant.getText().toString()), getValueInt(q7rd1, q7rd2, q7rd3, q7rd4, q7rd5, q7rd6, q7rd7, q7rd8, q7rd9, q7rd10), q711x.getText().toString(),
-                                   Integer.parseInt(QtyP.getText().toString()));
-                       }else{
-                         Toast.makeText(MainActivity.this,"Please fill form",Toast.LENGTH_LONG).show();
-                       }
-                       if(ins!= null) {
+                try {
+                    DatabaseSQLite dbf = new DatabaseSQLite(MainActivity.this);
+                    String ins = null;
+                    if (isValidate()) {
+                        ins = dbf.addData(bi.Pnid.getText().toString(), bi.DoV.getText().toString(), Integer.parseInt(bi.Chwcode.getText().toString()), Integer.parseInt(bi.Tlncode.getText().toString()), bi.VM2.getText().toString(), bi.Uccode.getText().toString(), Integer.parseInt(bi.Splant.getText().toString()), getValueInt(bi.q7rd1, bi.q7rd2, bi.q7rd3, bi.q7rd4, bi.q7rd5, bi.q7rd6, bi.q7rd7, bi.q7rd8, bi.q7rd9, bi.q7rd10), bi.q711x.getText().toString(),
+                                Integer.parseInt(bi.QtyP.getText().toString()));
+                    } else {
+                        // FancyToast.makeText(MainActivity.this, "Please fill form " , FancyToast.LENGTH_SHORT, FancyToast.ERROR, false).show();
+                        Toast.makeText(MainActivity.this, "Please fill form", Toast.LENGTH_LONG).show();
+                    }
+                    if (ins != null) {
 
-                           Toast.makeText(MainActivity.this, ins, Toast.LENGTH_LONG).show();
-                       }
-                       if (ins.equals("inserted")){
-                           Intent intent = getIntent();
+                        Toast.makeText(MainActivity.this, ins, Toast.LENGTH_LONG).show();
+                    }
+                    if (ins.equals("inserted")) {
+                        Intent intent = getIntent();
                            finish();
                            startActivity(intent);
                        }else{
@@ -81,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-        BtnView.setOnClickListener(new View.OnClickListener() {
+        bi.BtnView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try {
@@ -93,41 +68,40 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        bi.q7rd10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (bi.q7rd11.isChecked()) {
+                    bi.q711x.setVisibility(View.VISIBLE);
+                } else if (bi.q7rd10.isChecked()) {
+                    bi.q711x.setVisibility(View.INVISIBLE);
+                }
+            }
 
-q7rd10.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View view) {
-       if (q7rd11.isChecked()){
-           q711x.setVisibility(View.VISIBLE);
-       } else if (q7rd10.isChecked()) {
-           q711x.setVisibility(View.INVISIBLE);
-       }
-       }
+        });
 
-});
+        bi.q7rd11.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (bi.q7rd11.isChecked()) {
+                    bi.q711x.setVisibility(View.VISIBLE);
+                } else if (bi.q7rd10.isChecked()) {
+                    bi.q711x.setVisibility(View.INVISIBLE);
+                }
+            }
 
-q7rd11.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View view) {
-        if (q7rd11.isChecked()) {
-            q711x.setVisibility(View.VISIBLE);
-        } else if (q7rd10.isChecked()) {
-            q711x.setVisibility(View.INVISIBLE);
-        }
-    }
+        });
 
-});
-
-q7rd1.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View view) {
-        if (q7rd11.isChecked()) {
-            q711x.setVisibility(View.VISIBLE);
-        } else if (q7rd1.isChecked()) {
-            q711x.setVisibility(View.INVISIBLE);
-        }
-    }
-});
+        bi.q7rd1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (bi.q7rd11.isChecked()) {
+                    bi.q711x.setVisibility(View.VISIBLE);
+                } else if (bi.q7rd1.isChecked()) {
+                    bi.q711x.setVisibility(View.INVISIBLE);
+                }
+            }
+        });
 
     }
  public int getValueInt(RadioButton q7rd1, RadioButton q7rd2, RadioButton q7rd3, RadioButton q7rd4, RadioButton q7rd5, RadioButton q7rd6, RadioButton q7rd7, RadioButton q7rd8, RadioButton q7rd9, RadioButton q7rd10) {
@@ -162,49 +136,50 @@ q7rd1.setOnClickListener(new View.OnClickListener() {
                 return 10;
 
             }
-            return 0;
+     return 0;
+ }
+
+    public boolean isValidate() {
+
+        if (bi.Pnid.getText().toString().isEmpty()) {
+            bi.Pnid.setError("Please Enter PnidCode");
+            bi.Pnid.requestFocus();
+            return false;
+        }
+        if (bi.DoV.getText().toString().isEmpty()) {
+            bi.DoV.setError("Please Enter Visit Date");
+            bi.DoV.requestFocus();
+            return false;
+        }
+        if (bi.Chwcode.getText().toString().isEmpty()) {
+            bi.Chwcode.setError("Please Enter  ChwCode");
+            bi.Chwcode.requestFocus();
+            return false;
+        }
+        if (bi.Tlncode.getText().toString().isEmpty()) {
+            bi.Tlncode.setError("Please Enter TlnCode");
+            bi.Tlncode.requestFocus();
+            return false;
+        }
+        if (bi.VM2.getText().toString().isEmpty()) {
+            bi.VM2.setError("Please Enter  VM");
+            bi.VM2.requestFocus();
+            return false;
+        }
+        if (bi.Uccode.getText().toString().isEmpty()) {
+            bi.Uccode.setError("Please Enter UcCode");
+            bi.Uccode.requestFocus();
+            return false;
         }
 
-           public boolean isValidate(EditText Pnid, EditText Dov, EditText Chwcode, EditText Tlncode, EditText VM2, EditText Uccode, EditText Splant, EditText QtyP) {
-        if (Pnid.getText().toString().isEmpty()) {
-            Pnid.setError("Please Enter PnidCode");
-            Pnid.requestFocus();
+        if (bi.Splant.getText().toString().isEmpty()) {
+            bi.Splant.setError("Please Enter Splant");
+            bi.Splant.requestFocus();
             return false;
         }
-        if (Dov.getText().toString().isEmpty()) {
-            Dov.setError("Please Enter visit Date");
-            Dov.requestFocus();
-            return false;
-        }
-        if (Chwcode.getText().toString().isEmpty()) {
-            Chwcode.setError("Please Enter  ChwCode");
-            Chwcode.requestFocus();
-            return false;
-        }
-        if (Tlncode.getText().toString().isEmpty()) {
-            Tlncode.setError("Please Enter TlnCode");
-            Tlncode.requestFocus();
-            return false;
-        }
-        if (VM2.getText().toString().isEmpty()) {
-            VM2.setError("Please Enter  VM");
-            VM2.requestFocus();
-            return false;
-        }
-        if (Uccode.getText().toString().isEmpty()) {
-            Uccode.setError("Please Enter UcCode");
-            Uccode.requestFocus();
-            return false;
-        }
-
-        if (Splant.getText().toString().isEmpty()) {
-            Splant.setError("Please Enter Splant");
-            Splant.requestFocus();
-            return false;
-        }
-        if (QtyP.getText().toString().isEmpty()) {
-            QtyP.setError("Please Enter QtyP");
-            QtyP.requestFocus();
+        if (bi.QtyP.getText().toString().isEmpty()) {
+            bi.QtyP.setError("Please Enter QtyP");
+            bi.QtyP.requestFocus();
             return false;
         }
         return true;

@@ -4,6 +4,11 @@ android {
     compileSdkVersion 30
     buildToolsVersion "30.0.1"
 
+    buildFeatures {
+        dataBinding true
+    }
+
+
     defaultConfig {
         applicationId "com.example.moringaplantation3"
         minSdkVersion 22
@@ -37,6 +42,7 @@ dependencies {
     // implementation 'androidx.recyclerview:recyclerview:1.1.0'
     //implementation "androidx.recyclerview:recyclerview-selection:1.1.0-rc01"
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'com.github.Shashank02051997:FancyToast-Android:0.1.6'
     // implementation 'androidx.recyclerview:recyclerview:1.1.0'
     implementation 'com.github.AliAzaz:Edittext-Library:2.0.0'
     implementation 'com.github.AliAzaz:AndroidValidatorCrawler:1.0.3'
