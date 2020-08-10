@@ -146,16 +146,19 @@ public class MainActivity extends AppCompatActivity {
             bi.Pnid.requestFocus();
             return false;
         }
+
         if (bi.DoV.getText().toString().isEmpty()) {
             bi.DoV.setError("Please Enter Visit Date");
             bi.DoV.requestFocus();
             return false;
         }
+
         if (bi.Chwcode.getText().toString().isEmpty()) {
             bi.Chwcode.setError("Please Enter  ChwCode");
             bi.Chwcode.requestFocus();
             return false;
         }
+
         if (bi.Tlncode.getText().toString().isEmpty()) {
             bi.Tlncode.setError("Please Enter TlnCode");
             bi.Tlncode.requestFocus();
