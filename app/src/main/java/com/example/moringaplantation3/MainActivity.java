@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
                         ins = dbf.addData(bi.Pnid.getText().toString(), bi.DoV.getText().toString(), Integer.parseInt(bi.Chwcode.getText().toString()), Integer.parseInt(bi.Tlncode.getText().toString()), bi.VM2.getText().toString(), bi.Uccode.getText().toString(), Integer.parseInt(bi.Splant.getText().toString()), getValueInt(bi.q7rd1, bi.q7rd2, bi.q7rd3, bi.q7rd4, bi.q7rd5, bi.q7rd6, bi.q7rd7, bi.q7rd8, bi.q7rd9, bi.q7rd10), bi.q711x.getText().toString(),
                                 Integer.parseInt(bi.QtyP.getText().toString()));
                     } else {
-                        // FancyToast.makeText(MainActivity.this, "Please fill form " , FancyToast.LENGTH_SHORT, FancyToast.ERROR, false).show();
+
                         Toast.makeText(MainActivity.this, "Please fill form", Toast.LENGTH_LONG).show();
                     }
                     if (ins != null) {
@@ -51,8 +51,8 @@ public class MainActivity extends AppCompatActivity {
 
 
             }catch (Exception ex){
-                  Toast.makeText(MainActivity.this,ex.getMessage(),Toast.LENGTH_SHORT).show();
-            }
+
+                }
 
             }
         });
